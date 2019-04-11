@@ -1,0 +1,23 @@
+{
+  "name": "designer",
+  "version": "1.0.0",
+  "description": "This is a very simple wysiwyg style designer for createing mockups and wireframes.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start":"browser-sync --server --files='**/*.html,**/*.css,**/*.js'",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cqingwang/designer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cqingwang/designer/issues"
+  },
+  "homepage": "https://github.com/cqingwang/designer#readme"
+}

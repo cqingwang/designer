@@ -1,0 +1,194 @@
+{
+  "elements": [
+    
+    {
+      "name": "wired-item",
+      "label": "Combo/List item",
+      "disableSizing": true,
+      "properties": [
+        {
+          "name": "text",
+          "value": "item"
+        },
+        {
+          "name": "value",
+          "value": "item"
+        }
+      ]
+    },
+    {
+      "name": "wired-button",
+      "label": "Button",
+      "properties": [
+        {
+          "name": "text",
+          "value": "Button"
+        }
+      ]
+    },
+    {
+      "name": "wired-checkbox",
+      "label": "Checkbox",
+      "disableSizing": true,
+      "properties": [
+        {
+          "name": "text",
+          "value": "Checkbox text"
+        }
+      ]
+    },
+    {
+      "name": "wired-combo",
+      "label": "Combo box",
+      "disableSizing": true
+    },
+    {
+      "name": "wired-input",
+      "label": "Text input",
+      "properties": [
+        {
+          "name": "placeholder",
+          "value": "Placeholder"
+        }
+      ]
+    },
+    
+    {
+      "name": "wired-progress",
+      "label": "Progress bar"
+    },
+    {
+      "name": "wired-radio",
+      "label": "Radio",
+      "disableSizing": true,
+      "properties": [
+        {
+          "name": "text",
+          "value": "Radio_text"
+        }
+      ]
+    },
+    {
+      "name": "wired-radio-group",
+      "label": "Radio group",
+      "styles": [
+        {
+          "name": "width",
+          "value": "80px"
+        },
+        {
+          "name": "height",
+          "value": "100px"
+        }
+      ]
+    },
+    {
+      "name": "wired-textarea",
+      "label": "Multiline text input",
+      "properties": [
+        {
+          "name": "placeholder",
+          "value": "Placeholder"
+        }
+      ]
+    },
+    {
+      "name": "wired-toggle",
+      "label": "Toggle switch",
+      "disableSizing": true
+    },
+    {
+      "name": "wired-icon-button",
+      "label": "Icon button"
+    },
+    {
+      "name": "wired-slider",
+      "label": "Slider"
+    },
+    {
+      "name": "wired-spinner",
+      "label": "Spinner"
+    },
+    {
+      "name": "a",
+      "native": true,
+      "label": "Link",
+      "textContent": "Link text"
+    },
+   
+    
+    {
+      "name": "h1",
+      "native": true,
+      "label": "Title",
+      "textContent": "Title"
+    },
+    
+    {
+      "name": "h2",
+      "native": true,
+      "label": "Title 2",
+      "textContent": "Smaller title"
+    },
+    {
+      "name": "wired-card",
+      "label": "卡片容器",
+      "styles": [
+        {
+          "name": "width",
+          "value": "150px"
+        },
+        {
+          "name": "height",
+          "value": "150px"
+        }
+      ]
+    },
+    {
+      "name": "wired-input",
+      "label": "条形码",
+      "owner":true,
+      "properties": [
+        {
+          "name": "placeholder",
+          "value": "Placeholder"
+        }
+      ]
+    },
+    {
+      "name": "p",
+      "native": true,
+      "label": "文本",
+      "textContent": "Lorem ipsum dolor sit amet..."
+    },{
+      "name": "img",
+      "native": true,
+      "noCloseTag": true,
+      "label": "图片",
+      "styles": [
+        {
+          "name": "minWidth",
+          "value": "20px"
+        },
+        {
+          "name": "minHeight",
+          "value": "20px"
+        }
+      ]
+    },
+    {
+      "name": "wired-listbox",
+      "label": "边框",
+      "styles": [
+        {
+          "name": "width",
+          "value": "80px"
+        },
+        {
+          "name": "height",
+          "value": "100px"
+        }
+      ]
+    }
+  ]
+}

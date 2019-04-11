@@ -12,184 +12,187 @@
 <link rel="import" href="action-history.html">
 <link rel="import" href="app-controls.html">
 
+
 <dom-module id="the-app">
   <template>
     <style is="custom-style" include="iron-flex iron-flex-alignment">
-       :host {
-        display: block;
-        box-sizing: border-box;
-        position: relative;
-        --canvas-background: white;
-        --almost-black: #141720;
-        --dark-grey: #232733;
-        --medium-grey: #2f3545;
-        --light-grey: #383f52;
-        --highlight-pink: #e91e63;
-        --highlight-blue: #2196f3;
-        --input-border-color: #596c7a;
-      }
+          :host {
+    display: block;
+    box-sizing: border-box;
+    position: relative;
+    --canvas-background: white;
+    --almost-black: #141720;
+    --dark-grey: #232733;
+    --medium-grey: #2f3545;
+    --light-grey: #383f52;
+    --highlight-pink: #e91e63;
+    --highlight-blue: #2196f3;
+    --input-border-color: #596c7a;
+  }
 
-      #shell {
-        height: 100vh;
-        overflow: hidden;
-      }
+  #shell {
+    height: 100vh;
+    overflow: hidden;
+  }
 
-      #toolbar {
-        padding: 0 16px;
-        background-color: var(--almost-black);
-        color: white;
-        height: 60px;
-        font-size: 20px;
-      }
+  #toolbar {
+    padding: 0 16px;
+    background-color: var(--almost-black);
+    color: white;
+    height: 60px;
+    font-size: 20px;
+  }
 
-      .heavy {
-        font-weight: 900;
-        letter-spacing: 2px;
-      }
+  .heavy {
+    font-weight: 900;
+    letter-spacing: 2px;
+  }
 
-      .lite {
-        font-weight: 100;
-        opacity: 0.5;
-        letter-spacing: normal;
-      }
+  .lite {
+    font-weight: 100;
+    opacity: 0.5;
+    letter-spacing: normal;
+  }
 
-      button {
-        background: transparent;
-        color: white;
-        border: none;
-        cursor: pointer;
-      }
+  button {
+    background: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
 
-      button[disabled] {
-        pointer-events: none;
-        opacity: 0.3;
-      }
+  button[disabled] {
+    pointer-events: none;
+    opacity: 0.3;
+  }
 
-      .drawer {
-        min-width: 270px;
-        width: 270px;
-        height: 100%;
-        overflow: hidden;
-        background: var(--medium-grey);
-        color: white;
-        display: flex;
-        flex-direction: column;
-      }
+  .drawer {
+    min-width: 270px;
+    width: 270px;
+    height: 100%;
+    overflow: hidden;
+    background: var(--medium-grey);
+    color: white;
+    display: flex;
+    flex-direction: column;
+  }
 
-      .grid {
-        background-color: var(--canvas-background);
-        /* 10px grid, using http://www.patternify.com/ */
-        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIElEQVQoU2NkYGBIY2BgmMVAADASUgCTH1WIN6SIDh4AnhABC01te2MAAAAASUVORK5CYII=);
-        background-position: 0px 0px;
-      }
+  .grid {
+    background-color: var(--canvas-background);
+    /* 10px grid, using http://www.patternify.com/ */
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAIElEQVQoU2NkYGBIY2BgmMVAADASUgCTH1WIN6SIDh4AnhABC01te2MAAAAASUVORK5CYII=);
+    background-position: 0px 0px;
+  }
 
-      .gridPanel {
-        background: var(--dark-grey);
-        white-space: nowrap;
-        padding: 0;
-        color: white;
-      }
+  .gridPanel {
+    background: var(--dark-grey);
+    white-space: nowrap;
+    padding: 0;
+    color: white;
+  }
 
-      .gridPanel label {
-        font-size: 12px;
-        letter-spacing: 1px;
-        font-weight: 500;
-        text-decoration: none;
-        text-transform: uppercase;
-        line-height: 1.5;
-        margin-right: 5px;
-      }
+  .gridPanel label {
+    font-size: 12px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    line-height: 1.5;
+    margin-right: 5px;
+  }
 
-      paper-toggle-button {
-        --paper-toggle-button-checked-bar-color: #4caf50;
-        --paper-toggle-button-checked-button-color: #4caf50;
-        --paper-toggle-button-checked-ink-color: #4caf50;
-        --paper-toggle-button-unchecked-bar-color: #c73e65;
-        --paper-toggle-button-unchecked-button-color: #c73e65;
-        --paper-toggle-button-unchecked-ink-color: #c73e65;
-      }
+  paper-toggle-button {
+    --paper-toggle-button-checked-bar-color: #4caf50;
+    --paper-toggle-button-checked-button-color: #4caf50;
+    --paper-toggle-button-checked-ink-color: #4caf50;
+    --paper-toggle-button-unchecked-bar-color: #c73e65;
+    --paper-toggle-button-unchecked-button-color: #c73e65;
+    --paper-toggle-button-unchecked-ink-color: #c73e65;
+  }
 
-      designer-tab.single {
-        color: white;
-        background: var(--dark-grey);
-        width: 100%;
-        height: 41px;
-        margin: 0;
-        padding: 0;
-        border: none;
-      }
+  designer-tab.single {
+    color: white;
+    background: var(--dark-grey);
+    width: 100%;
+    height: 41px;
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
 
-      iron-pages {
-        height: 100%;
-        overflow: auto;
-        position: relative;
-      }
+  iron-pages {
+    height: 100%;
+    overflow: auto;
+    position: relative;
+  }
 
-      tree-view {
-        overflow: auto;
-      }
+  tree-view {
+    overflow: auto;
+  }
 
-      .logo {
-        display: block;
-        height: 44px;
-        width: auto;
-        border-radius: 100%;
-        margin-right: 10px;
-        margin-left: -5px;
-      }
+  .logo {
+    display: block;
+    height: 44px;
+    width: auto;
+    border-radius: 100%;
+    margin-right: 10px;
+    margin-left: -5px;
+  }
 
-      a,
-      a:visited,
-      a:hover {
-        outline: none;
-        text-decoration: none;
-        cursor: pointer;
-        color: inherit !important;
-      }
+  a,
+  a:visited,
+  a:hover {
+    outline: none;
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit !important;
+  }
 
-      #mobilePanel {
-        display: none;
-        background: var(--medium-grey);
-        color: white;
-        padding: 20px;
-      }
+  #mobilePanel {
+    display: none;
+    background: var(--medium-grey);
+    color: white;
+    padding: 20px;
+  }
 
-      #mobilePanel h2 {
-        font-weight: 400;
-      }
+  #mobilePanel h2 {
+    font-weight: 400;
+  }
 
-      #mobilePanel a {
-        background: var(--highlight-pink);
-        color: white !important;
-        display: inline-block;
-        padding: 5px 6px;
-        border-radius: 3px;
-      }
+  #mobilePanel a {
+    background: var(--highlight-pink);
+    color: white !important;
+    display: inline-block;
+    padding: 5px 6px;
+    border-radius: 3px;
+  }
 
-      @media (max-width: 800px) {
-        #mainPanel {
-          display: none;
-        }
-        #appControls {
-          display: none;
-        }
-        #mobilePanel {
-          display: initial;
-        }
-      }
+  @media (max-width: 800px) {
+    #mainPanel {
+      display: none;
+    }
+    #appControls {
+      display: none;
+    }
+    #mobilePanel {
+      display: initial;
+    }
+  }
     </style>
+
+
     <action-history id="actionHistory"></action-history>
     <div id="shell" class="vertical layout">
       <div id="toolbar" class="horizontal layout center">
         <a href="https://github.com/wiredjs/designer" target="_blank"><img class="logo" src$="[[importPath]]../images/logo100.png"></a>
         <span class="heavy flex">
-            <a href="https://github.com/wiredjs/designer" target="_blank">wired designer<span class="lite"> // beta</span></a>
+            <a href="https://github.com/wiredjs/designer" target="_blank">快宝 * 模板设计<span class="lite"> Pro</span></a>
         </span>
         <app-controls id="appControls"></app-controls>
       </div>
       <div id="mainPanel" class="flex horizontal layout">
         <div id="ldrawer" class="drawer">
-          <designer-tab class="single"><button>Components</button></designer-tab>
+          <designer-tab class="single"><button>元素树预览</button></designer-tab>
           <canvas-controls id="canvasControls"></canvas-controls>
           <tree-view name="tree" id="treeView"></tree-view>
         </div>
@@ -197,11 +200,11 @@
           <div class="horizontal layout" style="box-sizing: border-box;">
             <designer-tabs attr-for-selected="name" selected="{{mainPage}}" class="flex" style="width: auto;">
               <designer-tab name="designer">
-                <button>Designer</button>
+                <button>设计工作台</button>
               </designer-tab>
             </designer-tabs>
             <div class="gridPanel horizontal layout center">
-              <label>Show grid</label>
+              <label>显示网格</label>
               <paper-toggle-button id="gridToggle" on-change="_onGridToggle"></paper-toggle-button>
             </div>
           </div>

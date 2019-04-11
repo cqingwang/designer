@@ -68,7 +68,27 @@
               this.dispatchEvent(event);
             })
           });
-        } else {
+        } else if(item.owner) {
+          let kind = item.name;
+          let matches = kind.match(/(.*)\/(.*)/);
+          let packageName = kind;
+          if (matches && matches.length === 3) {
+            packageName = matches[1];
+            kind = matches[2];
+          }
+          let url = this.resolveUrl('../../src/owner-palette-element/' + packageName + "/" + kind + ".html");
+          Polymer.importHref(url, () => {
+            setTimeout(() => {
+              if (target && target.blur) {
+                target.blur();
+              }
+              setTimeout(() => {
+                const event = new CustomEvent('new-element', { bubbles: true, composed: true, detail: item });
+                this.dispatchEvent(event);
+              })
+            });
+          });
+        }else{
           let kind = item.name;
           let matches = kind.match(/(.*)\/(.*)/);
           let packageName = kind;
